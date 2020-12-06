@@ -50,4 +50,30 @@ def gcd(a,b):
     else:
         return a
 
-print(gcd(144,12))
+print(gcd(2,2))
+
+
+from typing import List
+
+def likes(names: List[str]) -> str:
+    if len(names) == 0:
+        return 'nobody likes it'
+    if len(names) == 1:
+        return names[0] + ' ' + 'like it'
+    if len(names) == 2:
+        return names[0] + ',' + ' ' + names[1] + ' ' + 'like it'
+    if len(names) == 3:
+        return names[0] + ',' + ' ' + names[1] + ' ' + 'and' + ' ' + names[2] + ' ' +'like it'
+    if len(names) > 3:
+            return names[0] + ',' + ' ' + names[1] + ' ' + 'and' + ' '+ str(len(names) - 2) + ' ' + 'like it'
+
+names1 = []# => "nobody likes it"
+names2 = ["Peter"] # => "Peter like it!"
+names3 = ["Peter", "Anna"] # => "Peter and Anna like it"
+names4 = ["Peter", "Anna", "Mark"]# => "Peter, Anna i Mark like it"
+names5 = ["Peter", "Anna", "Mark", "Ola"] # => "Peter, Anna i 2 other people like it"
+print(likes(names1))
+print(likes(names2))
+print(likes(names3))
+print(likes(names4))
+print(likes(names5))
