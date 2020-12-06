@@ -21,3 +21,33 @@ def findSqrt(nr):
             g = (g+nr/g)/2
 
 print(findSqrt(8))
+
+
+def convert_binary(n):
+    if n >= 0:
+        d = n
+        binary = ""
+    while d != 0:
+        r = d % 2
+        if (r == 1):
+            binary = "1" + binary
+        else:
+            binary = "0" + binary
+        d = (d-r)/2
+        return binary
+    else:
+        return 0
+print(convert_binary(20))
+
+def gcd(a,b):
+    while a != b:
+        if a > b:
+            a = a - b
+
+        else:
+            b = b - a
+
+    else:
+        return a
+
+print(gcd(144,12))
